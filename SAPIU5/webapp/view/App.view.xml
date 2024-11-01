@@ -6,15 +6,12 @@
             <App id="_IDGenApp">
                     <pages>
                         <Page id="_IDGenPage" title="{i18n>appTitle}">
-                            <Panel id="_IDGenPanel" headerText="{i18n>helloPanel}" class="sapUiResponsiveMargin" width="auto">
-                                <content>
-                                    <Button id="_IDGenButton" text="{i18n>showButtonText}" press=".onShowHello" class="sapUiSmallMarginEnd"/>
-                                    <Input id="_IDGenInput" value="{/recipient/name}"
-                                        valueLiveUpdate="true"
-                                        width="60%"/>
-                                    <Text id="_IDGenText" text="Hello {/recipient/name}" class="sapUiSmallMargin boldElements sapthemeHighlight-asColor"/>
-                                </content>
-                            </Panel>
+                            <headerContent>
+                                <Button id="helloDialogButtonHeader" icon="sap-icon://action" press=".onOpenDialogHeader" class="sapUiSmallMarginEnd"/>
+                            </headerContent>
+                            <content>
+                                <mvc:XMLView id="_IDGenXMLView" viewName="logaligroup.SAPUI5.view.HelloPanel"/>
+                            </content>
                         </Page>
                     </pages>
             </App>
