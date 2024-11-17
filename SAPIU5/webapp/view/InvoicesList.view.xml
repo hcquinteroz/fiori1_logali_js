@@ -1,6 +1,17 @@
 <mvc:View controllerName="logaligroup.SAPUI5.controller.InvoicesList" 
           xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <List id="_IDGenList" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" items="{invoices>/Invoices}">
+    <List id="invoiceList" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" 
+          items="{ path: 'invoices>/Invoices',
+                   sorter: {path: 'ShipperName',
+                            group: true}
+                }">
+        <headerToolbar>
+            <Toolbar id="_IDGenToolbar">
+                <Title id="_IDGenTitle" text="{i18n>invoiceListTitle}"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer"/>
+                <SearchField id="_IDGenSearchField" width="50%" search=".onFilterInvoices"/>
+            </Toolbar>
+        </headerToolbar>
         <items>
             <ObjectListItem id="_IDGenObjectListItem" 
                             title="{invoices>Quantity} x {invoices>ProductName}"
