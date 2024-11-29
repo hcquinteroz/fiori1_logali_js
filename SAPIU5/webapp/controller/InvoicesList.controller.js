@@ -45,9 +45,15 @@ sap.ui.define([
             },
 
             navigateToDetails: function (oEvent) {
+
+                // Obtenemos el objeto sobre el que se ha pulsado
+                const oItem = oEvent.getSource();
+
                 // Obtenemos el objeto de las rutas
                 const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo("Details"); // Este nombre es el que se definió en el archivo manifest.json
+                oRouter.navTo("Details", {  // Este nombre es el que se definió en el archivo manifest.json
+                    invoicePath: window.encodeURIComponent(oItem.getBindingContext("northwind").getPath().substr(1)) // northwind: es el modelo cargado en la vista
+                });
             }
         });
 

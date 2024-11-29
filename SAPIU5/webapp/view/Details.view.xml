@@ -3,7 +3,18 @@
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true">
-    <Page id="_IDGenPage"  title="{i18n>detailsPageTitle}">
-        <ObjectHeader id="_IDGenObjectHeader" title="Invoice"></ObjectHeader>
+    <Page id="_IDGenPage"  title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
+        <ObjectHeader id="_IDGenObjectHeader" title="{northwind>Quantity} x {northwind>ProductName}">
+            <attributes>
+                <ObjectAttribute id="_IDGenObjectAttribute1" text="{northwind>ShipName}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute2" text="{northwind>ShipAddress}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute3" text="{northwind>ShipCity}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute4" text="{northwind>ShipRegion}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute5" text="{northwind>ShipPostalCode}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute6" text="{northwind>ShipCountry}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute7" text="{northwind>CustomerID}"/>
+                <ObjectAttribute id="_IDGenObjectAttribute8" text="{northwind>CustomerName}"/>
+            </attributes>
+        </ObjectHeader>
     </Page>
 </mvc:View>
