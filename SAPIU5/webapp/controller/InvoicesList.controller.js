@@ -42,6 +42,12 @@ sap.ui.define([
                 // Obtenemos los ítems de la lista
                 const oBinding = oList.getBinding("items");
                 oBinding.filter(aFilter);
+            },
+
+            navigateToDetails: function (oEvent) {
+                // Obtenemos el objeto de las rutas
+                const oRouter = sap.ui.core.UIComponent.getRouterFor(this);
+                oRouter.navTo("Details"); // Este nombre es el que se definió en el archivo manifest.json
             }
         });
 

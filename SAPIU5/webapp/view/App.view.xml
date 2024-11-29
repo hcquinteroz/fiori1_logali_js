@@ -3,18 +3,6 @@
             xmlns:mvc="sap.ui.core.mvc"
             displayBlock="true">
         <Shell id="_IDGenShell">
-            <App id="_IDGenApp">
-                    <pages>
-                        <Page id="_IDGenPage" title="{i18n>appTitle}">
-                            <headerContent>
-                                <Button id="helloDialogButtonHeader" icon="sap-icon://action" press=".onOpenDialogHeader" class="sapUiSmallMarginEnd"/>
-                            </headerContent>
-                            <content>
-                                <mvc:XMLView id="_IDGenXMLView" viewName="logaligroup.SAPUI5.view.HelloPanel"/>
-                                <mvc:XMLView id="_IDGenXMLView1" viewName="logaligroup.SAPUI5.view.InvoicesList"/>
-                            </content>
-                        </Page>
-                    </pages>
-            </App>
+            <App id="app"/>
         </Shell>
 </mvc:View>

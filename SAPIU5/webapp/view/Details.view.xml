@@ -1,0 +1,9 @@
+<mvc:View
+    controllerName="logaligroup.SAPUI5.controller.Details"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true">
+    <Page id="_IDGenPage"  title="{i18n>detailsPageTitle}">
+        <ObjectHeader id="_IDGenObjectHeader" title="Invoice"></ObjectHeader>
+    </Page>
+</mvc:View>

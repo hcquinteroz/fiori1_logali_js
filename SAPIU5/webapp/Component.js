@@ -21,15 +21,14 @@ sap.ui.define([
                 // Call the init function of the parent
                 UIComponent.prototype.init.apply(this, arguments);
 
-                // Set i18n model on the view
-                var i18nModel = new ResourceModel({ bundleName: "logaligroup.SAPUI5.i18n.i18n" });
-                this.setModel(i18nModel, "i18n");
-
                 // Set data model on the view
                 this.setModel(Models.createRecipient());
 
                 // Obtenemos la instancia del controlador desde donde se invoca el diálogo
                 this._helloDialog = new HelloDialog(this.getRootControl());
+
+                // Inicializamos el enrutamiento definido en el archivo manifest.json
+                this.getRouter().initialize();
             },
 
             // Función de apertura del diálogo para ser invocada desde cualquier parte de la aplicación
