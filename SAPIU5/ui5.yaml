@@ -18,7 +18,7 @@ server:
         backend:
           - path: /V2
             url: https://services.odata.org/
-            destination: Northwind2
+            destination: Northwind
             authenticationType: NoAuthentication
     - name: fiori-tools-appreload
       afterMiddleware: compression
