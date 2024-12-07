@@ -2,6 +2,7 @@
     controllerName="logaligroup.SAPUI5.controller.Details"
     xmlns="sap.m"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:ctrl="logaligroup.SAPUI5.control"
     displayBlock="true">
     <Page id="_IDGenPage"  title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
         <ObjectHeader id="_IDGenObjectHeader" title="{northwind>Quantity} x {northwind>ProductName}">
@@ -16,5 +17,6 @@
                 <ObjectAttribute id="_IDGenObjectAttribute8" text="{northwind>CustomerName}"/>
             </attributes>
         </ObjectHeader>
+        <ctrl:ProductRating id="rating" class="sapUiSmallMarginBeginEnd" change=".onRatingChange" />
     </Page>
 </mvc:View>
