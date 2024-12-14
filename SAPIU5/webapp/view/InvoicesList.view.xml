@@ -1,6 +1,6 @@
 <mvc:View controllerName="logaligroup.SAPUI5.controller.InvoicesList" 
           xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc">
-    <List id="invoiceList" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" 
+    <Table id="invoiceList" headerText="{i18n>invoiceListTitle}" class="sapUiResponsiveMargin" width="auto" 
           items="{ path: 'northwind>/Invoices',
                    sorter: {path: 'ShipperName',
                             group: true}
@@ -12,27 +12,48 @@
                 <SearchField id="_IDGenSearchField" width="50%" search=".onFilterInvoices"/>
             </Toolbar>
         </headerToolbar>
+        <columns>
+            <Column id="_IDGenColumn" hAlign="End" minScreenWidth="Small" demandPopin="true" width="5em">
+                <Text id="_IDGenText1" text="{i18n>columnQuantity}" />
+            </Column>
+            <Column id="_IDGenColumn1">
+                <Text id="_IDGenText2"text="{i18n>columnName}" />
+            </Column>
+            <Column id="_IDGenColumn2" minScreenWidth="Small" demandPopin="true">
+                <Text id="_IDGenText3"text="{i18n>columnStatus}" />
+            </Column>
+            <Column id="_IDGenColumn3" minScreenWidth="Tablet">
+                <Text id="_IDGenText4"text="{i18n>columnSupplier}" />
+            </Column>
+            <Column id="_IDGenColumn4" hAlign="End">
+                <Text id="_IDGenText5"text="{i18n>columnPrice}" />
+            </Column>
+        </columns>
         <items>
-            <ObjectListItem id="_IDGenObjectListItem" 
-                            title="{northwind>Quantity} x {northwind>ProductName}"
-                            number="{parts: [
-                                                {path: 'northwind>ExtendedPrice'},
-                                                {path: 'currency>/usd'}
-                                            ],
-                                    type: 'sap.ui.model.type.Currency',
-                                    formatOptions: {
-                                        showMeasure: false
-                                    }
-                            }"
-                            numberUnit="{currency>/usd}"
-                            numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}"
-                            type="Navigation"
+            <ColumnListItem id="_IDGenColumnListItem" type="Navigation"
                             press="navigateToDetails">
-                <firstStatus>
-                    <ObjectStatus id="_IDGenObjectStatus" text="{path: 'northwind>Status',
-                                                                 formatter: '.formatter.invoiceStatus'}"/>
-                </firstStatus>
-            </ObjectListItem>
+                <cells>
+                    <ObjectNumber id="_IDGenObjectNumber" number="{northwind>Quantity}" emphasized="false" />
+                    <ObjectIdentifier id="_IDGenObjectIdentifier" title="{northwind>ProductName}" />
+                    <Text id="_IDGenText6" text="{
+                        path: 'northwind>Status',
+                        formatter: '.formatter.invoiceStatus'
+                    }" />
+                    <Text id="_IDGenText7" text="{northwind>ShipperName}" />
+                    <ObjectNumber id="_IDGenObjectNumber1" 
+                        number="{parts: [
+                                            {path: 'northwind>ExtendedPrice'},
+                                            {path: 'currency>/usd'}
+                                        ],
+                                type: 'sap.ui.model.type.Currency',
+                                formatOptions: {
+                                    showMeasure: false
+                                }
+                        }"
+                        unit="{currency>/usd}"
+                        state="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}" />
+                </cells>
+            </ColumnListItem>
         </items>
-    </List>
+    </Table>
 </mvc:View>
