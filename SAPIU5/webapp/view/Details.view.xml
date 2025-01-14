@@ -5,7 +5,9 @@
     xmlns:ctrl="logaligroup.SAPUI5.control"
     displayBlock="true">
     <Page id="_IDGenPage"  title="{i18n>detailsPageTitle}" showNavButton="true" navButtonPress=".onNavBack">
-        <ObjectHeader id="_IDGenObjectHeader" title="{northwind>Quantity} x {northwind>ProductName}">
+        <ObjectHeader id="_IDGenObjectHeader" title="{northwind>Quantity} x {northwind>ProductName}"
+                      responsive="true"
+                      fullScreenOptimized="true">
             <attributes>
                 <ObjectAttribute id="_IDGenObjectAttribute1" text="{northwind>ShipName}"/>
                 <ObjectAttribute id="_IDGenObjectAttribute2" text="{northwind>ShipAddress}"/>
