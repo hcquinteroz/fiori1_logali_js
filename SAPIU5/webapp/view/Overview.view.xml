@@ -4,6 +4,15 @@
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true">
     <Page id="_IDGenPage1" title="{i18n>appTitle}">
+        <landmarkInfo>
+            <PageAccessibleLandmarkInfo id="_IDGenPageAccessibleLandmarkInfo" 
+                rootRole="Region"
+                rootLabel="{i18n>overviewRootLabel}"
+                contentRole="Main"
+                contentLabel="{i18n>overviewContentLabel}"
+                headerRole="Banner"
+                headerLabel="{i18n>iverviewHeaderLabel}"/>
+        </landmarkInfo>
         <headerContent>
             <Button
                 id="helloDialogButtonHeader"
