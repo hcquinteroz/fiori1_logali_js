@@ -24,6 +24,9 @@ sap.ui.define([
                 // Set data model on the view
                 this.setModel(Models.createRecipient());
 
+                // Set Device Model
+                this.setModel(Models.createDeviceModel(), "device"); // "device": nombre que le damos al modelo
+
                 // Obtenemos la instancia del controlador desde donde se invoca el diálogo
                 this._helloDialog = new HelloDialog(this.getRootControl());
 
